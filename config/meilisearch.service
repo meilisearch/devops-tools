@@ -1,0 +1,11 @@
+[Unit]
+Description=MeiliSearch
+After=systemd-user-sessions.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/meilisearch --db-path /var/lib/meilisearch/data.ms --env development
+Environment="MEILI_SERVER_PROVIDER=provider_name"
+
+[Install]
+WantedBy=default.target
